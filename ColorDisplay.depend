@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1521607546 source:c:\users\truongpv\desktop\consoledisplay\colordisplay.cpp
+	"ColorDisplay.h"
+
+1521607802 c:\users\truongpv\desktop\consoledisplay\colordisplay.h
+	<windows.h>
+
+1521609903 source:c:\users\truongpv\desktop\consoledisplay\main.cpp
+	<iostream>
+	<conio.h>
+	"ColorDisplay.h"
+
+1521607546 source:c:\users\truongpv\desktop\colordisplay\colordisplay.cpp
+	"ColorDisplay.h"
+
+1521607802 c:\users\truongpv\desktop\colordisplay\colordisplay.h
+	<windows.h>
+
+1521640780 source:c:\users\truongpv\desktop\colordisplay\main.cpp
+	<iostream>
+	<conio.h>
+	"ColorDisplay.h"
+
+1521607546 source:c:\users\truongpv\desktop\2048\colordisplay.cpp
+	"ColorDisplay.h"
+
+1521607802 c:\users\truongpv\desktop\2048\colordisplay.h
+	<windows.h>
+
+1522641214 source:c:\users\truongpv\desktop\2048\main.cpp
+	<iostream>
+	<conio.h>
+	"ColorDisplay.h"
+	<cstdlib>
+	<windows.h>
+	<fstream>
+	<time.h>
+	<math.h>
+	<string>
+	<sstream>
+
