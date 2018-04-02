@@ -61,7 +61,7 @@ string ConvertNumberString( int number)
 void TaoKhung()
 {
 	int temp;
-	ifstream in("Khung.in");
+	ifstream in("Khung.txt");
 	for (int j=0; j<13; j++){
 		for (int i=0; i<21; i++){
 			in >> temp;
@@ -95,7 +95,7 @@ void HuongDan()
 void Logo()
 {
 	char c;
-	ifstream in("Logo.in");
+	ifstream in("Logo.txt");
 	do{
 		in >> c;
 		cout << c;
@@ -415,7 +415,7 @@ void Left()
 void Choi()
 {
 	int i, j;
-	ifstream inScore("Score.in");
+	ifstream inScore("Score.txt");
 	inScore >> highScore;
 	inScore.close();
 	bool KiTuKep=false;//Do phim mui ten la ki tu kep, KiTuKep de loai bo ki tu kep phat sinh khi nhap
