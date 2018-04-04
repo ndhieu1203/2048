@@ -428,6 +428,7 @@ void Choi()
 	}
 	ThemSo();
 	do{
+		system("cls");
 		InBang();
 		move=getch();//Doc 1 ki tu tu ban phim
 		int x=(int)move;
