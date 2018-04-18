@@ -221,7 +221,26 @@ void Down()
 				themSo = true;
 			}
 		}
-		
+		//Gop het nhung o trong ben duoi
+		for (j=3; j>0; j--){
+			if (!Matrix[i][j]){
+				vt1=vt2=j;
+				do{ vt2--;if (vt2==0) break;} while (!Matrix[i][vt2]);
+				if (vt2 || (!vt2 && Matrix[i][vt2])){
+					for (int k=vt2*2+3+1; k<vt1*2+3+1; k++){
+						PrintString("    ",vt2*2+3,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						PrintString(diem[Matrix[i][vt2]],k,i*5+1);
+
+						Sleep(delay);
+					}
+					//Doi cho o trong voi o co gia tri trong ma tran
+					temp = Matrix[i][vt1];
+					Matrix[i][vt1] = Matrix[i][vt2];
+					Matrix[i][vt2]= temp;
+					themSo = true;
+				}
+			}
+		}
 	}
 }
 
@@ -258,7 +277,26 @@ void Up()
 				themSo = true;
 			}
 		}
-		
+        //Gop het nhung o trong ben tren
+		for (j=0; j<3; j++){
+			if (!Matrix[i][j]){
+				vt1=vt2=j;
+				do{ vt2++;if (vt2==3) break;} while (!Matrix[i][vt2]);
+				if (vt2!=3 || (vt2==3 && Matrix[i][vt2])){
+					for (int k=vt2*2+3+1; k>vt1*2+3+1; k--){
+						PrintString("    ",vt2*2+5,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						PrintString(diem[Matrix[i][vt2]],k,i*5+1);
+
+						Sleep(delay);
+					}
+					//Doi cho o trong voi o co gia tri trong ma tran
+					temp = Matrix[i][vt1];
+					Matrix[i][vt1] = Matrix[i][vt2];
+					Matrix[i][vt2]= temp;
+					themSo = true;
+				}
+			}
+		}
 	}
 }
 
@@ -295,7 +333,26 @@ void Right()
 				themSo = true;
 			}
 		}
-		
+        //Gop het nhung o trong ben phai
+		for (i=3; i>0; i--){
+			if (!Matrix[i][j]){
+				vt1=vt2=i;
+				do{ vt2--;if (vt2==0) break;} while (!Matrix[vt2][j]);
+				if (vt2 || (!vt2 && Matrix[vt2][j])){
+					for (int k=vt2*5+1+1; k<vt1*5+1+1; k++){
+						PrintString("    ",j*3+2,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						PrintString(diem[Matrix[vt2][j]],j*3+2,k);
+
+						Sleep(delay);
+					}
+					//Doi cho o trong voi o co gia tri trong ma tran
+					temp = Matrix[vt1][j];
+					Matrix[vt1][j] = Matrix[vt2][j];
+					Matrix[vt2][j]= temp;
+					themSo = true;
+				}
+			}
+		}
 	}
 }
 
@@ -332,7 +389,26 @@ void Left()
 				themSo = true;
 			}
 		}
-		
+        		//Gop het nhung o trong ben trai
+		for (i=0; i<3; i++){
+			if (!Matrix[i][j]){
+				vt1=vt2=i;
+				do{ vt2++;if (vt2==3) break;} while (!Matrix[vt2][j]);
+				if (vt2!=3 || (vt2==3 && Matrix[vt2][j])){
+					for (int k=vt2*5+1; k>vt1*5+1; k--){
+						PrintString("    ",j*3+2,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						PrintString(diem[Matrix[vt2][j]],j*3+2,k);
+
+						Sleep(delay);
+					}
+					//Doi cho o trong voi o co gia tri trong ma tran
+					temp = Matrix[vt1][j];
+					Matrix[vt1][j] = Matrix[vt2][j];
+					Matrix[vt2][j]= temp;
+					themSo = true;
+				}
+			}
+		}
 	}
 }
 
