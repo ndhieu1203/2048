@@ -30,6 +30,17 @@ int score, highScore;
 
 bool themSo;
 
+void XoaManHinh()
+{
+       HANDLE hOut;
+       COORD Position;
+       hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+       Position.X = 0;
+       Position.Y = 0;
+       SetConsoleCursorPosition(hOut, Position);
+}
+
+
 void Print(int dong,int cot, char kitu, int mau, COORD pos, ColorCharacter cc)
 {
     cc.character = kitu;
@@ -428,7 +439,7 @@ void Choi()
 	}
 	ThemSo();
 	do{
-		system("cls");
+		XoaManHinh();
 		InBang();
 		move=getch();//Doc 1 ki tu tu ban phim
 		int x=(int)move;
@@ -447,7 +458,7 @@ void Choi()
 			continue;
 		}//Neu co KiTuKep thi continue de bo qua viec ThemSo
 	}while (!ThuaCuoc());
-	system("cls");
+	XoaManHinh();
 	InBang();
 	if (score>highScore){
 		ofstream outScore("Score.in");
