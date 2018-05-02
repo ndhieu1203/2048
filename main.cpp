@@ -209,12 +209,12 @@ void Down()
 				vt1=vt2=j;
 				do{ vt2--;if (vt2==0) break;} while (!Matrix[i][vt2]);
 				if (vt2 || (!vt2 && Matrix[i][vt2])){
-					for (int k=vt2*2+3+1; k<vt1*2+3+1; k++){
-						PrintString("    ",vt2*2+3,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						PrintString(diem[Matrix[i][vt2]],k,i*5+1);
+
+						DrawString("    ",vt2*3+1,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[i][vt2]],vt2*3+2,i*5+1);
 
 						Sleep(delay);
-					}
+
 					//Doi cho o trong voi o co gia tri trong ma tran
 					temp = Matrix[i][vt1];
 					Matrix[i][vt1] = Matrix[i][vt2];
@@ -238,12 +238,12 @@ void Down()
 				vt1=vt2=j;
 				do{ vt2--;if (vt2==0) break;} while (!Matrix[i][vt2]);
 				if (vt2 || (!vt2 && Matrix[i][vt2])){
-					for (int k=vt2*2+3+1; k<vt1*2+3+1; k++){
-						PrintString("    ",vt2*2+3,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						PrintString(diem[Matrix[i][vt2]],k,i*5+1);
+
+						DrawString("    ",vt2*3+1,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[i][vt2]],vt2*3+2,i*5+1);
 
 						Sleep(delay);
-					}
+
 					//Doi cho o trong voi o co gia tri trong ma tran
 					temp = Matrix[i][vt1];
 					Matrix[i][vt1] = Matrix[i][vt2];
@@ -265,12 +265,12 @@ void Up()
 				vt1=vt2=j;
 				do{ vt2++;if (vt2==3) break;} while (!Matrix[i][vt2]);
 				if (vt2!=3 || (vt2==3 && Matrix[i][vt2])){
-					for (int k=vt2*2+3+1; k>vt1*2+3+1; k--){
-						PrintString("    ",vt2*2+5,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						PrintString(diem[Matrix[i][vt2]],k,i*5+1);
+
+						DrawString("    ",vt2*3+1,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[i][vt2]],vt2*3+1,i*5+1);
 
 						Sleep(delay);
-					}
+
 					//Doi cho o trong voi o co gia tri trong ma tran
 					temp = Matrix[i][vt1];
 					Matrix[i][vt1] = Matrix[i][vt2];
@@ -294,12 +294,12 @@ void Up()
 				vt1=vt2=j;
 				do{ vt2++;if (vt2==3) break;} while (!Matrix[i][vt2]);
 				if (vt2!=3 || (vt2==3 && Matrix[i][vt2])){
-					for (int k=vt2*2+3+1; k>vt1*2+3+1; k--){
-						PrintString("    ",vt2*2+5,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						PrintString(diem[Matrix[i][vt2]],k,i*5+1);
+
+						DrawString("    ",vt2*3+1,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[i][vt2]],vt2*3+1,i*5+1);
 
 						Sleep(delay);
-					}
+
 					//Doi cho o trong voi o co gia tri trong ma tran
 					temp = Matrix[i][vt1];
 					Matrix[i][vt1] = Matrix[i][vt2];
@@ -321,12 +321,12 @@ void Right()
 				vt1=vt2=i;
 				do{ vt2--;if (vt2==0) break;} while (!Matrix[vt2][j]);
 				if (vt2 || (!vt2 && Matrix[vt2][j])){
-					for (int k=vt2*5+1+1; k<vt1*5+1+1; k++){
-						PrintString("    ",j*3+2,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						PrintString(diem[Matrix[vt2][j]],j*3+2,k);
+
+						DrawString("    ",j*3+1,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[vt2][j]],j*3+2,vt2*5+1);
 
 						Sleep(delay);
-					}
+
 					//Doi cho o trong voi o co gia tri trong ma tran
 					temp = Matrix[vt1][j];
 					Matrix[vt1][j] = Matrix[vt2][j];
@@ -350,12 +350,12 @@ void Right()
 				vt1=vt2=i;
 				do{ vt2--;if (vt2==0) break;} while (!Matrix[vt2][j]);
 				if (vt2 || (!vt2 && Matrix[vt2][j])){
-					for (int k=vt2*5+1+1; k<vt1*5+1+1; k++){
-						PrintString("    ",j*3+2,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						PrintString(diem[Matrix[vt2][j]],j*3+2,k);
+
+						DrawString("    ",j*3+1,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[vt2][j]],j*3+2,vt2*5+1);
 
 						Sleep(delay);
-					}
+
 					//Doi cho o trong voi o co gia tri trong ma tran
 					temp = Matrix[vt1][j];
 					Matrix[vt1][j] = Matrix[vt2][j];
@@ -377,12 +377,12 @@ void Left()
 				vt1=vt2=i;
 				do{ vt2++;if (vt2==3) break;} while (!Matrix[vt2][j]);
 				if (vt2!=3 || (vt2==3 && Matrix[vt2][j])){
-					for (int k=vt2*5+1; k>vt1*5+1; k--){
-						PrintString("    ",j*3+2,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						PrintString(diem[Matrix[vt2][j]],j*3+2,k);
+
+						DrawString("    ",j*3+1,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[vt2][j]],j*3+2,vt2*5+1);
 
 						Sleep(delay);
-					}
+
 					//Doi cho o trong voi o co gia tri trong ma tran
 					temp = Matrix[vt1][j];
 					Matrix[vt1][j] = Matrix[vt2][j];
@@ -406,12 +406,12 @@ void Left()
 				vt1=vt2=i;
 				do{ vt2++;if (vt2==3) break;} while (!Matrix[vt2][j]);
 				if (vt2!=3 || (vt2==3 && Matrix[vt2][j])){
-					for (int k=vt2*5+1; k>vt1*5+1; k--){
-						PrintString("    ",j*3+2,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						PrintString(diem[Matrix[vt2][j]],j*3+2,k);
+					
+						DrawString("    ",j*3+1,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[vt2][j]],j*3+2,vt2*5+1);
 
 						Sleep(delay);
-					}
+					
 					//Doi cho o trong voi o co gia tri trong ma tran
 					temp = Matrix[vt1][j];
 					Matrix[vt1][j] = Matrix[vt2][j];
