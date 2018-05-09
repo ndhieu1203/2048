@@ -41,7 +41,7 @@ void XoaManHinh()
 }
 
 
-void Print(int dong,int cot, char kitu, int mau, COORD pos, ColorCharacter cc)
+void Draw(int cot,int dong, char kitu, int mau, COORD pos, ColorCharacter cc)
 {
     cc.character = kitu;
     cc.color = mau;
@@ -50,12 +50,12 @@ void Print(int dong,int cot, char kitu, int mau, COORD pos, ColorCharacter cc)
     cd.setColorCharacterAtPosition(cc, pos);
 }
 
-void PrintString(const string &str, int dong, int cot)
+void DrawString(const string &str, int cot, int dong)
 {
     int i;
     for(i=0;i<str.length();i++)
     {
-       Print(dong, cot, str[i], 7, pos, cc);
+       Draw(cot, dong, str[i], 7, pos, cc);
        cot++;
     }
 }
@@ -154,17 +154,17 @@ void InBang()
 	VeKhung();//Ve khung truoc roi dien gia tri
 	for (i=0; i<4; i++){
 		for (int j=0; j<4; j++){
-            PrintString(diem[Matrix[i][j]], 2+j*3, 1+i*5 );
+            DrawString(diem[Matrix[i][j]], 1+i*5, 2+j*3);
 		}
 	}
 	//In diem nguoi choi
 	string highScorestring = ConvertNumberString(highScore);
-	PrintString("BEST: " + highScorestring, 1, 30);
+	DrawString("BEST: " + highScorestring, 30,1);
 
 	string scorestring = ConvertNumberString(score);
-	PrintString("DIEM: " + scorestring, 3, 30);
+	DrawString("DIEM: " + scorestring, 30,3);
 
-	PrintString("=> Nhan ESC de thoat.", 6,30);
+	DrawString("=> Nhan ESC de thoat.", 30,6);
 }
 
 bool ConOTrong()
@@ -210,8 +210,8 @@ void Down()
 				do{ vt2--;if (vt2==0) break;} while (!Matrix[i][vt2]);
 				if (vt2 || (!vt2 && Matrix[i][vt2])){
 
-						DrawString("    ",vt2*3+1,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						DrawString(diem[Matrix[i][vt2]],vt2*3+2,i*5+1);
+						DrawString("    ",i*5+1,vt2*3+2);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[i][vt2]],i*5+1,vt1*3+2);
 
 						Sleep(delay);
 
@@ -239,8 +239,8 @@ void Down()
 				do{ vt2--;if (vt2==0) break;} while (!Matrix[i][vt2]);
 				if (vt2 || (!vt2 && Matrix[i][vt2])){
 
-						DrawString("    ",vt2*3+1,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						DrawString(diem[Matrix[i][vt2]],vt2*3+2,i*5+1);
+						DrawString("    ",i*5+1,vt2*3+2);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[i][vt2]],i*5+1,vt1*3+2);
 
 						Sleep(delay);
 
@@ -266,8 +266,8 @@ void Up()
 				do{ vt2++;if (vt2==3) break;} while (!Matrix[i][vt2]);
 				if (vt2!=3 || (vt2==3 && Matrix[i][vt2])){
 
-						DrawString("    ",vt2*3+1,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						DrawString(diem[Matrix[i][vt2]],vt2*3+1,i*5+1);
+						DrawString("    ",i*5+1,vt2*3+2);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[i][vt2]],i*5+1,vt1*3+2);
 
 						Sleep(delay);
 
@@ -295,8 +295,8 @@ void Up()
 				do{ vt2++;if (vt2==3) break;} while (!Matrix[i][vt2]);
 				if (vt2!=3 || (vt2==3 && Matrix[i][vt2])){
 
-						DrawString("    ",vt2*3+1,i*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						DrawString(diem[Matrix[i][vt2]],vt2*3+1,i*5+1);
+						DrawString("    ",i*5+1,vt2*3+2);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[i][vt2]],i*5+1,vt1*3+2);
 
 						Sleep(delay);
 
@@ -322,8 +322,8 @@ void Right()
 				do{ vt2--;if (vt2==0) break;} while (!Matrix[vt2][j]);
 				if (vt2 || (!vt2 && Matrix[vt2][j])){
 
-						DrawString("    ",j*3+1,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						DrawString(diem[Matrix[vt2][j]],j*3+2,vt2*5+1);
+						DrawString("    ",vt2*5+1,j*3+2);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[vt2][j]],vt1*5+1,j*3+2);
 
 						Sleep(delay);
 
@@ -351,8 +351,8 @@ void Right()
 				do{ vt2--;if (vt2==0) break;} while (!Matrix[vt2][j]);
 				if (vt2 || (!vt2 && Matrix[vt2][j])){
 
-						DrawString("    ",j*3+1,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						DrawString(diem[Matrix[vt2][j]],j*3+2,vt2*5+1);
+						DrawString("    ",vt2*5+1,j*3+2);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[vt2][j]],vt1*5+1,j*3+2);
 
 						Sleep(delay);
 
@@ -378,8 +378,8 @@ void Left()
 				do{ vt2++;if (vt2==3) break;} while (!Matrix[vt2][j]);
 				if (vt2!=3 || (vt2==3 && Matrix[vt2][j])){
 
-						DrawString("    ",j*3+1,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						DrawString(diem[Matrix[vt2][j]],j*3+2,vt2*5+1);
+						DrawString("    ",vt2*5+1,j*3+2);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[vt2][j]],vt1*5+1,j*3+2);
 
 						Sleep(delay);
 
@@ -406,12 +406,12 @@ void Left()
 				vt1=vt2=i;
 				do{ vt2++;if (vt2==3) break;} while (!Matrix[vt2][j]);
 				if (vt2!=3 || (vt2==3 && Matrix[vt2][j])){
-					
-						DrawString("    ",j*3+1,vt2*5+1);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
-						DrawString(diem[Matrix[vt2][j]],j*3+2,vt2*5+1);
+
+						DrawString("    ",vt2*5+1,j*3+2);	//Ghi chen so bi di chuyen nam trong ma tran khi InBang
+						DrawString(diem[Matrix[vt2][j]],vt1*5+1,j*3+2);
 
 						Sleep(delay);
-					
+
 					//Doi cho o trong voi o co gia tri trong ma tran
 					temp = Matrix[vt1][j];
 					Matrix[vt1][j] = Matrix[vt2][j];
@@ -449,14 +449,11 @@ void Choi()
 			case 72:Up();		break;
 			case 77:Right();	break;
 			case 75:Left();		break;
-			default: KiTuKep = true;	break;
+
 		}
 		if (themSo) ThemSo();
 		if (x==27) break;
-		if (KiTuKep){
-			KiTuKep=false;
-			continue;
-		}//Neu co KiTuKep thi continue de bo qua viec ThemSo
+
 	}while (!ThuaCuoc());
 	XoaManHinh();
 	InBang();
@@ -466,7 +463,7 @@ void Choi()
 		outScore.close();
 		cout << "   --->> Ki luc moi!!!";
 	}
-	PrintString("THUA CUOC !!!!!!!!!!!!!!!!",6,30);
+	DrawString("THUA CUOC !!!!!!!!!!!!!!!!",30,6);
 
 }
 
@@ -493,9 +490,9 @@ int main()
 		TaoKhung();
 		Choi();
 		do {
-			PrintString("Ban co muon choi tiep?",8,30);
+			DrawString("Ban co muon choi tiep?",30,8);
 
-			PrintString("Co/Khong (c/k): ",9,30);
+			DrawString("Co/Khong (c/k): ",30,9);
 
 			chon = getch();
 		}while(!(chon=='c' || chon=='k'));
