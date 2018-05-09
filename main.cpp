@@ -429,7 +429,7 @@ void Choi()
 	ifstream inScore("Score.txt");
 	inScore >> highScore;
 	inScore.close();
-	bool KiTuKep=false;//Do phim mui ten la ki tu kep, KiTuKep de loai bo ki tu kep phat sinh khi nhap
+	
 	char move;
 	//Khoi tao gia tri ban dau bang 0
 	for (i=0; i<4; i++){
